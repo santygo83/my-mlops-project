@@ -59,4 +59,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/${{ github.actor }}/flasktest-app:${{ github.sha }}
+          tags: ghcr.io/${{ github.actor }}/mlopsimg:${{ github.sha }}
