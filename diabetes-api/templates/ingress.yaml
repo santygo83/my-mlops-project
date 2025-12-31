@@ -7,8 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: diabetes.example.com
-      http:
+    - http:
         paths:
           - path: /mlops
             pathType: Prefix
