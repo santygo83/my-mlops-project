@@ -81,6 +81,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add k8s-deploy.yml
           git commit -m "Update image tag to ${{ github.sha }}"
           git push origin deploy
