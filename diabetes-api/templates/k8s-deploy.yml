@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: diabetes-api
+  labels:
+    app: diabetes-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: diabetes-api
+  template:
+    metadata:
+      labels:
+        app: diabetes-api
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: diabetes-api
+          image: ghcr.io/santygo83/mlopsimg:0fd298fe15abbc905eb4bd56e5d557852c3ff3c2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: {{ .Values.container.port }}
